@@ -16,7 +16,7 @@
 
 // console.log(answer);
 
-// let answer = prompt("Тебе есть 18 лет?", "Канешна");
+ let answer = prompt("Тебе есть 18 лет?", "Канешна");
 
 // console.log(answer);
 
