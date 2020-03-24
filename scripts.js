@@ -1,30 +1,26 @@
-//'use strict';
+'use strict';
 
-// var leftBorderWidth = 1;
+let money = prompt("Ваш бюджет на месяц?", "");
+let time = prompt("Введите дату в формате YYYY-MM-DD", "YYYY-MM-DD");
 
-// {
-//     let second = 2;
-// }
+// console.log(money);
 
-// const pi = 3.14;
+let appData = {
+    budget : money,
+    timeData : time,
+    expenses : {},
+    optionalExpenses : {},
+    income : [],
+    savings : false
+};
 
-// console.log(pi);
+let expens = prompt("Введите обязательную статью расходов в этом месяце", "");
+let expensSumm = prompt("Во сколько обойдется?", "");
 
-//alert("Hello and!");
+appData.expenses[expens] = expensSumm;
 
-// let answer = confirm("Ты здесь дядя?");
+console.log(appData.expenses);
 
-// console.log(answer);
+alert("Ваш бюджет на 1 день =" +money/30);
 
- let answer = prompt("Тебе есть 18 лет?", "Канешна");
 
-// console.log(answer);
-
-let incr = 10,
-    decr = 10;
-
-// incr++;
-// decr--;
-
-console.log(incr++);
-console.log(decr--);
