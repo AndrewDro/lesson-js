@@ -37,13 +37,11 @@ function chooseExpenses() {
 chooseExpenses();
 
 function chooseOptExpenses() {
-    let a,b;
-    for (let i = 1; i < 4; i++) {
-        a = prompt("Статья необязательных расходов?");
-        b = i;
-        appData.optionalExpenses[b] = a;
-    }
     
+    for (let i = 1; i <= 3; i++) {
+        let questionOptExpenses = prompt("Статья необязательных расходов?");        
+        appData.optionalExpenses[i] = questionOptExpenses;
+    }    
 }
 //chooseOptExpenses();
 
