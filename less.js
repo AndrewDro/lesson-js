@@ -325,10 +325,10 @@
 
 // console.log(div);
 
-let // btn = document.getElementsByTagName('button'),
-    btn = document.querySelectorAll('button'),
-    wrapp = document.querySelector('.wrapper'),
-    link = document.querySelector('a');
+// let // btn = document.getElementsByTagName('button'),
+//     btn = document.querySelectorAll('button'),
+//     wrapp = document.querySelector('.wrapper'),
+//     link = document.querySelector('a');
 
 // btn[0].onclick = function () {
 //     alert("Вы нажали первую кнопку");
@@ -349,16 +349,16 @@ let // btn = document.getElementsByTagName('button'),
 //     console.log('Произошло событие: ' + event.type + '  на элементе ' + event.target);
 // });
 
-link.addEventListener('click', function(event) {
-    event.preventDefault();
-    console.log('Произошло событие: ' + event.type + '  на элементе ' + event.target);
-});
+// link.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     console.log('Произошло событие: ' + event.type + '  на элементе ' + event.target);
+// });
 
-btn.forEach(function(item) {
-    item.addEventListener('mouseleave', function() {
-        console.log('Вышли!');
-    });
-});
+// btn.forEach(function(item) {
+//     item.addEventListener('mouseleave', function() {
+//         console.log('Вышли!');
+//     });
+// });
 
 // btn[0].addEventListener('click', function() {    
 //     alert("Вы опять нажали первую кнопку");
@@ -366,4 +366,129 @@ btn.forEach(function(item) {
 
 // btn[0].addEventListener('mouseenter', function() {
 //     alert("Вы навели первую кнопку");
+// });
+
+
+// touchstart - нажатие пальцем на экран
+// touchmove - ведение по экрану нажатым пальцем
+// touchend - снятие пальца с экрана
+// touchenter - когда палец зашёл на какой-то элемент 
+// touchleave - когда палец покинул пределы элемента
+// touchcancel - когда палец кликает за пределами браузера
+
+// window.addEventListener('DOMContentLoaded', function(){
+//     let box = document.querySelector('.box');
+
+//     // box.addEventListener('touchstart', function(e) {
+//     //     e.preventDefault();
+//     //     console.log("Red box: touchstart");
+//     //     console.log(e.target);
+//     //     console.log(e.touches[0].target); // все пальцы на экране
+//     //     console.log(e.changedTouches); // все пальцы на экране
+//     //     console.log(e.targetTouches); // только те пальцы, которые на элементе
+//     // });
+
+//     box.addEventListener('touchmove', function(e) {
+//         e.preventDefault();
+//         console.log("Red box: " + e.touches[0].pageX);
+//     });
+
+//     // box.addEventListener('touchend', function(e) {
+//     //     e.preventDefault();
+//     //     console.log("Red box: touchend");
+//     // });
+// });
+
+
+// let ans = prompt("Введите ваше имя"),
+//     reg = /n/ig;
+
+// console.log(ans.search(reg));
+// console.log(ans.match(reg));
+//console.log(reg.test(ans));
+
+// i - без учёта регистра
+// g -  глобально
+// m
+
+// \d - цифры \D не цифры
+// \w - символы \W не символы
+// \s - пробелы \S не пробелы
+
+// let pass = prompt("Введите пароль");
+
+// console.log(pass.replace(/./g, '*'));
+// alert('12-34-56'.replace(/-/g, ':'));
+
+// let ans = prompt("Введите число"),
+//     reg = /\d/ig;
+
+// console.log(ans.match(reg));
+
+// let str = 'My name is/* R2D2.';
+
+// console.log(str.match(/ /ig));
+//console.log(str.match(/\w\d\w\d/i));
+
+
+// let timerId = setTimeout(sayHello, 3000);
+// clearTimeout(timerId);
+
+// let timerId = setInterval(sayHello, 3000);
+// clearTimeout(timerId);
+
+// function sayHello () {
+//     console.log('Hello!');
+// }
+
+// let timerId = setTimeout(function log () { // рекурсивный вызов setTimeout иногда лучше чем setInterval, 
+//     console.log('Hello!'); // когда скрипт выполняется дольше задержки
+//     setTimeout(log, 2000);
+// });
+
+// let btn = document.querySelector('.btn'),
+//     elem = document.querySelector('.box');
+
+// function myAnimation() {
+//     let pos = 0,
+//         id = setInterval(frame, 15);
+
+//     function frame() {
+//         if (pos == 300) {
+//             clearInterval(id);
+//         } else {
+//             pos++;
+//             elem.style.top = pos + "px";
+//             elem.style.left = pos + "px";
+//         }
+//     }
+// }
+
+// btn.addEventListener('click', myAnimation);
+
+// делегирование
+
+// let btnBlock = document.querySelector('.btn-block'),
+//     btns = document.getElementsByTagName('button');
+
+// // 1й вариант через тег
+
+// // btnBlock.addEventListener('click', function(event) {
+// //     if (event.target && event.target.tagName == 'BUTTON') {
+// //         console.log("Нажал на кнопку, получи резалт!");
+// //     }
+
+// // 2й вариант через класс
+
+// // btnBlock.addEventListener('click', function(event) {
+// //     if (event.target && event.target.classList.contains('first')) {
+// //         console.log("Нажал на кнопку, получи резалт!");
+// //     }
+
+// // 3й вариант через matches(совпадения)
+
+// btnBlock.addEventListener('click', function(event) {
+//     if (event.target && event.target.matches('button.first')) {
+//         console.log("Нажал на кнопку, получи резалт!");
+//     }
 // });
