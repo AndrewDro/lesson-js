@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // пишем таймер
 
-    let deadline = '2020-04-13';
+    let deadline = '2020-04-15';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -45,13 +45,13 @@ window.addEventListener('DOMContentLoaded', function () {
             minutes = Math.floor((t / 1000 / 60) % 60),
             hours = Math.floor((t / (1000 * 60 * 60)));
         // hours = Math.floor((t/1000/60/60) % 24);
-       
-            return {
-                'total': t,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds
-            };        
+
+        return {
+            'total': t,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
     }
 
     function setClock(id, endtime) {
@@ -86,4 +86,40 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     setClock('timer', deadline);
+
+    // модальное окно
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function () {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
+
+    // кнопка "Узнать подробнее"
+
+    let descriptionBtn = document.querySelectorAll('.description-btn'),
+        infoDescription = document.querySelector('.info');   
+
+    infoDescription.addEventListener('click', function (event) {
+        let target = event.target;
+        if (target && target.classList.contains('description-btn')) {
+            for (let i = 0; i < descriptionBtn.length; i++) {
+                if (target == descriptionBtn[i]) {
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden';                    
+                }                
+            }
+        }         
+    });
+
 });

@@ -492,3 +492,15 @@
 //         console.log("Нажал на кнопку, получи резалт!");
 //     }
 // });
+
+
+// Домашка № 11
+
+
+let age = document.getElementById('age');
+function showUser(surname, name) {
+	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+
+showUser.apply(age, ['Pomidirov', 'Ivan']);
+
